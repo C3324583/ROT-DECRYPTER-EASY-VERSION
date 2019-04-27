@@ -60,62 +60,15 @@ int main(){
 	        fifth = x;
 	    }
 	}
-	
-/*	int rotationkey = first - 'E';
-    for(int i=0; text[i] != '\0'; i++){
-        if(text[i] >= 'A' && text[i] <= 'Z'){
-    		text[i] = text[i] - rotationkey;
-    		if(text[i]>'Z'){
-		        text[i] = text[i] - 26;
-		    }
-		    if(text[i]<'A'){
-		        text[i] = text[i] + 26;
-		    }    
-		}
-    }
-    printf("Is this the correct message: %s\n", text); //prints the rotated message to the screen
-    rotationkey = second - 'E' - rotationkey;
-    for(int i=0; text[i] != '\0'; i++){
-        if(text[i] >= 'A' && text[i] <= 'Z'){
-    		text[i] = text[i] - rotationkey;
-    		if(text[i]>'Z'){
-		        text[i] = text[i] - 26;
-		    }
-		    if(text[i]<'A'){
-		        text[i] = text[i] + 26;
-		    }    
-		}
-    }
-    printf("Is this the correct message: %s\n", text); //prints the rotated message to the screen
-    rotationkey = third - 'E' - rotationkey;
-    for(int i=0; text[i] != '\0'; i++){
-        if(text[i] >= 'A' && text[i] <= 'Z'){
-    		text[i] = text[i] - rotationkey;
-    		if(text[i]>'Z'){
-		        text[i] = text[i] - 26;
-		    }
-		    if(text[i]<'A'){
-		        text[i] = text[i] + 26;
-		    }    
-		}
-    }
-    printf("Is this the correct message: %s\n", text); //prints the rotated message to the screen
-    
-    return 0;
-}*/
 
-	printf("%d %d %d %d %d \n",first,second,third,fourth,fifth);
+
+    rotation(first, text);
+    rotation(second, text);
+    rotation(third, text);
+    rotation(fourth, text);
+    rotation(fifth, text);
+    printf("My code is shit but one of these should be correct:\n");rotationdefault(text);
     
-    for(s=1; s<7; s++){
-    switch(s){
-        case 1: rotation(first, text);break;
-        case 2: rotation(second, text);break;
-        case 3: rotation(third, text);break;
-        case 4: rotation(fourth, text);break;
-        case 5: rotation(fifth, text);break;
-        default: printf("My code is shit but one of these should be correct:\n");rotationdefault(text);
-    }
-    }
 	return 0;
 }
 
@@ -151,7 +104,7 @@ void rotation(int x, char text[]){
 
 
 
-//this function prints all possible rotation keys to the screen if the first function fails to find the correct rotation
+//this function prints all possible rotation keys to the screen if the first function fails to find the correct rotation key
 void rotationdefault(char text[]){
     char txt[10000];
     for(int y=0;text[y] != '\0'; y++){
